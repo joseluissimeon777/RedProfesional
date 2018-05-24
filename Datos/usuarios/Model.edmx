@@ -1,0 +1,87 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="usuarioContext.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="USUARIO">
+          <Key>
+            <PropertyRef Name="usuario_id" />
+          </Key>
+          <Property Name="usuario_id" Type="int" Nullable="false" />
+          <Property Name="usuario_apellido" Type="nvarchar" MaxLength="50" />
+          <Property Name="usuario_nombre" Type="nvarchar" MaxLength="50" />
+          <Property Name="usuario_email" Type="nvarchar" MaxLength="30" />
+          <Property Name="usuario_telefono" Type="nvarchar" MaxLength="25" />
+          <Property Name="usuario_fecha_nacimiento" Type="datetime" />
+          <Property Name="usuario_direccion" Type="nvarchar" MaxLength="50" />
+          <Property Name="usuario_userAspNet" Type="nvarchar" MaxLength="256" />
+        </EntityType>
+        <EntityContainer Name="usuarioContextStoreContainer">
+          <EntitySet Name="USUARIO" EntityType="Self.USUARIO" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="usuarioContext" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="USUARIO">
+          <Key>
+            <PropertyRef Name="usuario_id" />
+          </Key>
+          <Property Name="usuario_id" Type="Int32" Nullable="false" />
+          <Property Name="usuario_apellido" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="usuario_nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="usuario_email" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="usuario_telefono" Type="String" MaxLength="25" FixedLength="false" Unicode="true" />
+          <Property Name="usuario_fecha_nacimiento" Type="DateTime" Precision="3" />
+          <Property Name="usuario_userAspNet" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+          <Property Name="usuario_direccion" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityContainer Name="usuarios" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="USUARIO" EntityType="Self.USUARIO" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="usuarioContextStoreContainer" CdmEntityContainer="usuarios">
+          <EntitySetMapping Name="USUARIO">
+            <EntityTypeMapping TypeName="usuarioContext.USUARIO">
+              <MappingFragment StoreEntitySet="USUARIO">
+                <ScalarProperty Name="usuario_direccion" ColumnName="usuario_direccion" />
+                <ScalarProperty Name="usuario_id" ColumnName="usuario_id" />
+                <ScalarProperty Name="usuario_apellido" ColumnName="usuario_apellido" />
+                <ScalarProperty Name="usuario_nombre" ColumnName="usuario_nombre" />
+                <ScalarProperty Name="usuario_email" ColumnName="usuario_email" />
+                <ScalarProperty Name="usuario_telefono" ColumnName="usuario_telefono" />
+                <ScalarProperty Name="usuario_fecha_nacimiento" ColumnName="usuario_fecha_nacimiento" />
+                <ScalarProperty Name="usuario_userAspNet" ColumnName="usuario_userAspNet" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Ninguno" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
