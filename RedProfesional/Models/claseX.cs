@@ -9,5 +9,8 @@ namespace RedProfesional.Models
     {
 
         public string PropX { get; set; }
+
+        public int HolaMundo { get; set; }
+
     }
 }
